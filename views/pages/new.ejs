@@ -1,0 +1,59 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <% include ../partials/head %>
+</head>
+<body class="container">
+
+<header>
+    <% include ../partials/header %>
+</header>
+<main>
+  <div id="Jum" class="jumbotron">
+      <h2>Road Trip</h2>
+
+      <%if (dataArray != null) { %>
+       
+          <div>
+          
+            <p>On the <%= dataArray[0] %> trip to <%= dataArray[1] %>, my <%= dataArray[2] %> friend
+            and I decided to invent a game. Since this would be a rather <%= dataArray[3] %> trip, it 
+            would need to be a game with <%= dataArray[4] %> and <%= dataArray[5] %>. Using our <%= dataArray[6] %> to
+            <%= dataArray[7] %>, we tried to get the <%= dataArray[8] %> next to us to play too, but they just
+            <%= dataArray[9] %>ed at us and <%= dataArray[10] %> away. After a few rounds, we thought the game could
+            use some <%= dataArray[11] %> se we turned on the <%= dataArray[12] %> and started <%= dataArray[13] %> to the
+            <%= dataArray[14] %> that came on. This lasted for <%= dataArray[15] %> before I got <%= dataArray[16] %> and 
+            decided to <%= dataArray[17] %>. I'll never <%= dataArray[18] %> that trip, it was the <%= dataArray[19] %> 
+            road trip of my <%= dataArray[20] %>.</p>
+          
+
+            <img src="https://images.unsplash.com/photo-1471958680802-1345a694ba6d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=832&q=80"></a>
+          </div>
+
+        <% } %>
+
+
+  </div>
+</main>
+
+<footer>
+  <% include ../partials/footer %>
+</footer>
+<script type="text/javascript">
+// our menu calls this page URL with no ?id= value,
+// so code needs to check for that
+// when user enters data, I append the data using the required ?id=
+
+  function updateURL() {
+    // http://localhost:3000/uploadData?id=Terminator
+    var myURL = (document.location).toString();
+    var n = myURL.indexOf("?");
+    myURL = myURL.substr(0, n); 
+    document.location = myURL + "?id=" + document.getElementById("movie").value;
+
+  }
+</script>
+
+</body>
+</html>

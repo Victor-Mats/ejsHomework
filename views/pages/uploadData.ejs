@@ -1,0 +1,71 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <% include ../partials/head %>
+</head>
+<body class="container">
+
+<header>
+    <% include ../partials/header %>
+</header>
+<main>
+  <div class="jumbotron">
+      <h2>Madlibs</h2>
+
+      <div>Imput words following the order provided here, in the box below.</div>
+      <br/>
+      <ol>
+        <li>adjective</li>
+        <li>location</li>
+        <li>adjective</li>
+        <li>adjective</li>
+        <li>plural noun</li>
+        <li>plural noun</li>
+        <li>noun</li>
+        <li>verb</li>
+        <li>noun</li>
+        <li>verb</li>
+        <li>action verb</li>
+        <li>plual noun</li>
+        <li>noun</li>
+        <li>verb ending in "ing"</li>
+        <li>noun</li>
+        <li>measurement of time</li>
+        <li>adjective</li>
+        <li>action verb</li>
+        <li>verb</li>
+        <li>adjective</li>
+        <li>noun</li>
+
+
+      </ol>
+
+      </br>
+      <label for="movie">Input Here</label>
+      <input class="form-control" type="text" id="movie" name="movie"><br>
+      <button class="btn btn-primary  " onclick="updateURL();">Submit</button>
+
+  </div>
+</main>
+
+<footer>
+  <% include ../partials/footer %>
+</footer>
+<script type="text/javascript">
+// our menu calls this page URL with no ?id= value,
+// so code needs to check for that
+// when user enters data, I append the data using the required ?id=
+
+  function updateURL() {
+    // http://localhost:3000/uploadData?id=Terminator
+    var myURL = (document.location).toString();
+    var n = myURL.indexOf("?");
+    myURL = myURL.substr(0, n); 
+    document.location = myURL + "?id=" + document.getElementById("movie").value;
+
+  }
+</script>
+
+</body>
+</html>
